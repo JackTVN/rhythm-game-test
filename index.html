@@ -6,8 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bruh</title>
-    <script src="./node_modules/pixi.js/dist/browser/pixi.min.js"></script>
+    <script src="pixi.min.js"></script>
+    <script type="text/javascript">
+        let type = "WebGL";
+        if (!PIXI.utils.isWebGLSupported()) {
+          type = "canvas";
+        }
     
+        PIXI.utils.sayHello(type);
+      </script>
 </head>
 
 <style>
