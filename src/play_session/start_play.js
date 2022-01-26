@@ -1,6 +1,6 @@
 import { Chart } from "../chart/test.js"
 
-var PHASE_IN_TIME = 3.00
+var PHASE_IN_TIME = 3000
 var NOTE_SPEED = 6 //idk
 
 export class Game {
@@ -11,13 +11,13 @@ export class Game {
         this.stage = new PIXI.Container()
         this.draw = new PIXI.Graphics()
 
-        this.dimension = dimension
+        this.dimension = dimension  
 
         this.time = 0
 
         this.core = { x: this.dimension.x / 2, y: this.dimension.y / 1.2 }
         this.line = [
-            //{ id: 1, x: this.dimension.x / 5, y: 0 },
+            { id: 1, x: this.dimension.x / 5, y: 0 },
             //{ id: 2, x: this.dimension.x / 5 * 4, y: 0 },
         ]
 
@@ -45,7 +45,7 @@ export class Game {
     }
 
     update(delta) {
-        this.time += delta * 16.66 / 1000
+        this.time += delta * 16.66
 
         let cX = this.core.x
         let cY = this.core.y
@@ -80,7 +80,7 @@ export class Game {
             let rotation = Math.atan2(this.line[i].y - cY, this.line[i].x - cX)
 
             // Finalize the position of the note using the rotation
-            let distance = NOTE_SPEED * 50
+            let distance = NOTE_SPEED * 0.05
             let singularX = distance * Math.cos(rotation)
             let singularY = distance * Math.sin(rotation)
 

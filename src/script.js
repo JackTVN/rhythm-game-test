@@ -13,7 +13,7 @@ const mainRenderer = new PIXI.Renderer({
 // can then insert into the DOM
 document.body.appendChild(mainRenderer.view);
 
-const playBtn = new PIXI.Sprite.from('./resources/play_button.png');
+const playBtn = new PIXI.Sprite.from('../src/resources/play_button.png');
 
 const mainMenu = new PIXI.Container()
 
@@ -78,16 +78,17 @@ function startGame() {
     let gameTicker = PIXI.Ticker.shared
     let isPlaying = true
 
-    var music = new Audio('./music/press_start.mp3')
+    var music = new Audio('../src/music/press_start.mp3')
     let musicPlaying = false
-    if (!musicPlaying && currentGame.time - 3 >= 0){
-        music.play()
-        console.log("pog");
-        musicPlaying = true
-    }
 
     // Main Loop
     gameTicker.add((delta) => {
+        if (!musicPlaying && currentGame.time - 3000 >= 0){
+            music.play()
+            console.log("pog");
+            musicPlaying = true
+        }
+
         currentGame.draw.clear()
         currentGame.update(delta)
         mainRenderer.render(currentGame.stage)

@@ -8,13 +8,14 @@
     <title>Bruh</title>
     <script src="pixi.min.js"></script>
     <script type="text/javascript">
-        let type = "WebGL";
-        if (!PIXI.utils.isWebGLSupported()) {
-          type = "canvas";
-        }
+    let type = "WebGL";
+    if (!PIXI.utils.isWebGLSupported()) {
+      type = "canvas";
+    }
+
+    PIXI.utils.sayHello(type);
+  </script>
     
-        PIXI.utils.sayHello(type);
-      </script>
 </head>
 
 <style>
