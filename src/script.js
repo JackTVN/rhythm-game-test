@@ -13,7 +13,7 @@ const mainRenderer = new PIXI.Renderer({
 // can then insert into the DOM
 document.body.appendChild(mainRenderer.view);
 
-const playBtn = new PIXI.Sprite.from('../resources/play_button.png');
+const playBtn = new PIXI.Sprite.from('./resources/play_button.png');
 
 const mainMenu = new PIXI.Container()
 
