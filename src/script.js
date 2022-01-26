@@ -13,7 +13,7 @@ const mainRenderer = new PIXI.Renderer({
 // can then insert into the DOM
 document.body.appendChild(mainRenderer.view);
 
-const playBtn = new PIXI.Sprite.from('./src/resources/play_button.png');
+const playBtn = new PIXI.Sprite.from('/src/resources/play_button.png');
 
 console.log(document.URL);
 
@@ -80,7 +80,7 @@ function startGame() {
     let gameTicker = PIXI.Ticker.shared
     let isPlaying = true
 
-    var music = new Audio('./src/music/press_start.mp3')
+    var music = new Audio('/src/music/press_start.mp3')
     let musicPlaying = false
 
     // Main Loop
